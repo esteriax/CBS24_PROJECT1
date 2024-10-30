@@ -2,4 +2,5 @@
 Cyber Base MOOC project 1
 Django app with 5 OWASP Top Ten Web Application security risks
 
-For installation follow these instructions: https://docs.djangoproject.com/en/3.1/intro/tutorial01/
+For installation follow these instructions until you reach the chapter "The development server". You should skip the "Creating a project"-chapter: (https://docs.djangoproject.com/en/5.0/intro/tutorial01/)
+After doing the installations pull this project.
