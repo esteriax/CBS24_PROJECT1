@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # if the secret key is left unhashed, it could be aqcuired by attacker if DEBUG = True
 SECRET_KEY = 'django-insecure-tubp&jd#fuakwo0abvx_luhlws+-8&7x0ec&xx88_$b66mj8^u'
 
-# Virheellinen konfiguraatio voi paljastaa liikaa tietoa hyökkääjille tai jättää järjestelmän suojaamattomaksi.
-DEBUG = True # DEBUG = False
+# FLAW 3: Safety Misconfiguration
+DEBUG = True # Fix: DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -46,7 +47,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # FLAW 1: Missing CSRF. Fix by uncommenting next line.
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -109,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/Stockholm'
+TIME_ZONE = 'Europe/Helsinki'
 
 USE_I18N = True
 
@@ -131,3 +133,35 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# FLAW 2: "Security Logging and Monitoring Failures". Fix by uncommenting LOGGING.
+'''
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "file": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "mysite/logs/debug.log"),  
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": "INFO",  
+            "propagate": True,
+        },
+    },
+}
+'''
