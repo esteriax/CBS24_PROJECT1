@@ -90,6 +90,8 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
+#FLAW 5: Identification and Authentication Failures. Fix by uncommenting AUTH_PASSWORD_VALIDATORS down below.
+"""
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -103,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
+]"""
 
 
 # Internationalization
@@ -137,8 +139,9 @@ INTERNAL_IPS = [
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# FLAW 2: "Security Logging and Monitoring Failures". Fix by uncommenting LOGGING.
+# FLAW 2: "Security Logging and Monitoring Failures". Fix by uncommenting LOGGING down below.
 
+"""
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -163,5 +166,5 @@ LOGGING = {
             "propagate": True,
         },
     },
-}
+}"""
 
