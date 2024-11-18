@@ -138,7 +138,7 @@ INTERNAL_IPS = [
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # FLAW 2: "Security Logging and Monitoring Failures". Fix by uncommenting LOGGING.
-"""
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -150,7 +150,7 @@ LOGGING = {
     },
     "handlers": {
         "file": {
-            "level": "INFO",
+            "level": "WARNING",
             "class": "logging.FileHandler",
             "filename": os.path.join(BASE_DIR, "mysite/logs/debug.log"),  
             "formatter": "verbose",
@@ -159,9 +159,9 @@ LOGGING = {
     "loggers": {
         "django": {
             "handlers": ["file"],
-            "level": "INFO",  
+            "level": "WARNING",  
             "propagate": True,
         },
     },
 }
-"""
+
