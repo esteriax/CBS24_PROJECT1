@@ -138,7 +138,7 @@ INTERNAL_IPS = [
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # FLAW 2: "Security Logging and Monitoring Failures". Fix by uncommenting LOGGING.
-'''
+"""
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -164,4 +164,4 @@ LOGGING = {
         },
     },
 }
-'''
+"""
