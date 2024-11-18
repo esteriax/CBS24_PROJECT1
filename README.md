@@ -7,7 +7,7 @@ After doing the installations pull this project.
 
 How to log as admin:
 username: admin
-password: csbmooc2024
+password: csb
 
 How to log as regular user:
 username: user
