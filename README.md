@@ -14,7 +14,7 @@ Linux / macOS:
 Windows:
 ```py -m venv myenv```
 
-### 1.2 Start the environment
+### 1.2 Start the environment (type "deactivate" to exit the environment)
 Linux / macOS:
 ```source myenv/bin/activate```
 
