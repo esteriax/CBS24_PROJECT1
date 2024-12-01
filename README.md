@@ -8,41 +8,41 @@ It's assumed that Python 3.10 or later version is already installed. Otherwise s
 ### 1. Update the project specific Django version (if Django isn't installed, start from 1.3)
 
 ### 1.1 Create a virtual environment
-Linux / macOS
+Linux / macOS:
 ```python3 -m venv myenv```
 
 ### Windows:
-myenv\Scripts\activate
+```py -m venv myenv```
 
 ### 1.2 Start the environment
-Linux / macOS
-source env/bin/activate
+Linux / macOS:
+```source myenv/bin/activate```
 
 Windows:
-env\Scripts\activate.bat
+```myenv\Scripts\activate.bat```
 
 ### 1.3 Install the requirements
-Linux / macOS
-pip3 install -r requirements.txt
+Linux / macOS:
+```pip3 install -r requirements.txt```
 
 Windows:
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 ### 2. Check your Django version, should print "5.0.4"
-Linux / macOs
-python3 -m django --version
+Linux / macOs:
+```python3 -m django --version```
 
 Windows:
-py -m django --version
+```py -m django --version```
 
 ### 3. Clone this repo 
 
 ### 4. Run the server
-Linux / macOs
-python3 manage.py runserver
+Linux / macOs:
+```python3 manage.py runserver```
 
 Windows:
-py manage.py runserver
+```py manage.py runserver```
 
 ### 5. Use the following credinteals to log in
 How to log in as admin:
