@@ -11,7 +11,7 @@ It's assumed that Python 3.10 or later version is already installed. Otherwise s
 Linux / macOS:
 ```python3 -m venv myenv```
 
-### Windows:
+Windows:
 ```py -m venv myenv```
 
 ### 1.2 Start the environment
